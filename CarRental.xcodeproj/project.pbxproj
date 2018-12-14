@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09CE34F921C3706300B91CB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE34F821C3706300B91CB2 /* AppDelegate.swift */; };
-		09CE34FB21C3706300B91CB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE34FA21C3706300B91CB2 /* ViewController.swift */; };
+		09CE34FB21C3706300B91CB2 /* RentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE34FA21C3706300B91CB2 /* RentViewController.swift */; };
 		09CE34FE21C3706300B91CB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09CE34FC21C3706300B91CB2 /* Main.storyboard */; };
 		09CE350021C3706500B91CB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09CE34FF21C3706500B91CB2 /* Assets.xcassets */; };
 		09CE350321C3706500B91CB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09CE350121C3706500B91CB2 /* LaunchScreen.storyboard */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		09CE34F521C3706300B91CB2 /* CarRental.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarRental.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09CE34F821C3706300B91CB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		09CE34FA21C3706300B91CB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		09CE34FA21C3706300B91CB2 /* RentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentViewController.swift; sourceTree = "<group>"; };
 		09CE34FD21C3706300B91CB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09CE34FF21C3706500B91CB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09CE350221C3706500B91CB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,12 +97,9 @@
 		09CE34F721C3706300B91CB2 /* CarRental */ = {
 			isa = PBXGroup;
 			children = (
-				09CE34F821C3706300B91CB2 /* AppDelegate.swift */,
-				09CE34FA21C3706300B91CB2 /* ViewController.swift */,
+				09CE34FA21C3706300B91CB2 /* RentViewController.swift */,
 				09CE34FC21C3706300B91CB2 /* Main.storyboard */,
-				09CE34FF21C3706500B91CB2 /* Assets.xcassets */,
-				09CE350121C3706500B91CB2 /* LaunchScreen.storyboard */,
-				09CE350421C3706500B91CB2 /* Info.plist */,
+				09CE352621C3724200B91CB2 /* Support Files */,
 			);
 			path = CarRental;
 			sourceTree = "<group>";
@@ -123,6 +120,17 @@
 				09CE351A21C3706500B91CB2 /* Info.plist */,
 			);
 			path = CarRentalUITests;
+			sourceTree = "<group>";
+		};
+		09CE352621C3724200B91CB2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				09CE34F821C3706300B91CB2 /* AppDelegate.swift */,
+				09CE34FF21C3706500B91CB2 /* Assets.xcassets */,
+				09CE350121C3706500B91CB2 /* LaunchScreen.storyboard */,
+				09CE350421C3706500B91CB2 /* Info.plist */,
+			);
+			name = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09CE34FB21C3706300B91CB2 /* ViewController.swift in Sources */,
+				09CE34FB21C3706300B91CB2 /* RentViewController.swift in Sources */,
 				09CE34F921C3706300B91CB2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

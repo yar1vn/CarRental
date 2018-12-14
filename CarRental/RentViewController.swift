@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  RentViewController.swift
 //  CarRental
 //
 //  Created by Yariv Nissim on 12/13/18.
@@ -8,8 +8,7 @@
 
 import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
+class RentViewController: UIViewController {
+
 }
 
