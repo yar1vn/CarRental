@@ -15,6 +15,7 @@
 		09CE350E21C3706500B91CB2 /* CarRentalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE350D21C3706500B91CB2 /* CarRentalTests.swift */; };
 		09CE351921C3706500B91CB2 /* CarRentalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE351821C3706500B91CB2 /* CarRentalUITests.swift */; };
 		09CE352821C3740500B91CB2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE352721C3740500B91CB2 /* Result.swift */; };
+		09CE353821C379FE00B91CB2 /* CarRental.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE353721C379FE00B91CB2 /* CarRental.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		09CE351821C3706500B91CB2 /* CarRentalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalUITests.swift; sourceTree = "<group>"; };
 		09CE351A21C3706500B91CB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09CE352721C3740500B91CB2 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		09CE353721C379FE00B91CB2 /* CarRental.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRental.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				09CE352721C3740500B91CB2 /* Result.swift */,
+				09CE353721C379FE00B91CB2 /* CarRental.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			files = (
 				09CE34FB21C3706300B91CB2 /* RentViewController.swift in Sources */,
 				09CE352821C3740500B91CB2 /* Result.swift in Sources */,
+				09CE353821C379FE00B91CB2 /* CarRental.swift in Sources */,
 				09CE34F921C3706300B91CB2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
