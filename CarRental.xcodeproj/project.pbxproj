@@ -14,6 +14,7 @@
 		09CE350321C3706500B91CB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09CE350121C3706500B91CB2 /* LaunchScreen.storyboard */; };
 		09CE350E21C3706500B91CB2 /* CarRentalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE350D21C3706500B91CB2 /* CarRentalTests.swift */; };
 		09CE351921C3706500B91CB2 /* CarRentalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE351821C3706500B91CB2 /* CarRentalUITests.swift */; };
+		09CE352821C3740500B91CB2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE352721C3740500B91CB2 /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		09CE351421C3706500B91CB2 /* CarRentalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarRentalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09CE351821C3706500B91CB2 /* CarRentalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalUITests.swift; sourceTree = "<group>"; };
 		09CE351A21C3706500B91CB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09CE352721C3740500B91CB2 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				09CE34FA21C3706300B91CB2 /* RentViewController.swift */,
 				09CE34FC21C3706300B91CB2 /* Main.storyboard */,
+				09CE352B21C3741900B91CB2 /* Model */,
 				09CE352621C3724200B91CB2 /* Support Files */,
 			);
 			path = CarRental;
@@ -131,6 +134,14 @@
 				09CE350421C3706500B91CB2 /* Info.plist */,
 			);
 			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		09CE352B21C3741900B91CB2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				09CE352721C3740500B91CB2 /* Result.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09CE34FB21C3706300B91CB2 /* RentViewController.swift in Sources */,
+				09CE352821C3740500B91CB2 /* Result.swift in Sources */,
 				09CE34F921C3706300B91CB2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
