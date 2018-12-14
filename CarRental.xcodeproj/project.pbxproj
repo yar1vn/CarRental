@@ -15,6 +15,7 @@
 		09CE350E21C3706500B91CB2 /* CarRentalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE350D21C3706500B91CB2 /* CarRentalTests.swift */; };
 		09CE351921C3706500B91CB2 /* CarRentalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE351821C3706500B91CB2 /* CarRentalUITests.swift */; };
 		09CE352821C3740500B91CB2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE352721C3740500B91CB2 /* Result.swift */; };
+		09CE353621C3794700B91CB2 /* CarRentalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE353521C3794700B91CB2 /* CarRentalService.swift */; };
 		09CE353821C379FE00B91CB2 /* CarRental.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE353721C379FE00B91CB2 /* CarRental.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		09CE351821C3706500B91CB2 /* CarRentalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalUITests.swift; sourceTree = "<group>"; };
 		09CE351A21C3706500B91CB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09CE352721C3740500B91CB2 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		09CE353521C3794700B91CB2 /* CarRentalService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarRentalService.swift; sourceTree = "<group>"; };
 		09CE353721C379FE00B91CB2 /* CarRental.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRental.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 			children = (
 				09CE34FA21C3706300B91CB2 /* RentViewController.swift */,
 				09CE34FC21C3706300B91CB2 /* Main.storyboard */,
+				09CE352D21C3748C00B91CB2 /* Services */,
 				09CE352B21C3741900B91CB2 /* Model */,
 				09CE352621C3724200B91CB2 /* Support Files */,
 			);
@@ -145,6 +148,15 @@
 				09CE353721C379FE00B91CB2 /* CarRental.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		09CE352D21C3748C00B91CB2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				09CE353521C3794700B91CB2 /* CarRentalService.swift */,
+				09CE352E21C374B300B91CB2 /* LocationService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +292,7 @@
 			files = (
 				09CE34FB21C3706300B91CB2 /* RentViewController.swift in Sources */,
 				09CE352821C3740500B91CB2 /* Result.swift in Sources */,
+				09CE353621C3794700B91CB2 /* CarRentalService.swift in Sources */,
 				09CE353821C379FE00B91CB2 /* CarRental.swift in Sources */,
 				09CE34F921C3706300B91CB2 /* AppDelegate.swift in Sources */,
 			);
