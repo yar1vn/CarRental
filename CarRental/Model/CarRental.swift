@@ -17,7 +17,7 @@ struct CarRentalResponse: Codable, Hashable {
 
 struct CarRentalResult: Codable, Hashable {
     let provider: CarRentalProvider
-    let branchID: String
+    let branchId: String
     let location: CarRentalLocation
     let airport: String
     let address: CarRentalAddress
