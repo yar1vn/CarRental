@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 final class CarRentalViewModel: NSObject {
     private let carRentalService: CarRentalService
@@ -39,6 +40,20 @@ final class CarRentalViewModel: NSObject {
                 return nil
             }
             return rentals
+        }
+    }
+
+    func loadRentals(for location: CLLocationCoordinate2D, dates: DateInterval) {
+        state = .loading
+
+        carRentalService.getRentals(location: location, dates: dates) { result in
+            do {
+                let response = try result.get()
+                let rentals = CarRentalResultViewModel.results(from: response.results)
+                self.state = .rentals(rentals)
+            } catch {
+                self.state = .error(error)
+            }
         }
     }
 }
