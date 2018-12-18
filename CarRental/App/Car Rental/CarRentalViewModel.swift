@@ -43,13 +43,24 @@ final class CarRentalViewModel: NSObject {
         }
     }
 
+    func sort<C: Comparable>(by comprison: (C, C) -> Bool,
+                             keyPath: KeyPath<CarRentalResultViewModel, C>) {
+        guard let rentals = state.getCarRentals() else {
+            return
+        }
+        let sorted = rentals.lazy.sorted {
+            comprison($0[keyPath: keyPath], $1[keyPath: keyPath])
+        }
+        state = .rentals(sorted)
+    }
+
     func loadRentals(for location: CLLocationCoordinate2D, dates: DateInterval) {
         state = .loading
 
         carRentalService.getRentals(location: location, dates: dates) { result in
             do {
                 let response = try result.get()
-                let rentals = CarRentalResultViewModel.results(from: response.results)
+                let rentals = CarRentalResultViewModel.results(from: response.results, location: location)
                 self.state = .rentals(rentals)
             } catch {
                 self.state = .error(error)
@@ -82,26 +93,5 @@ extension CarRentalViewModel: UITableViewDataSource {
 
     func configureCell(_ cell: UITableViewCell, with rental: CarRentalResultViewModel) {
 
-    }
-}
-
-struct CarRentalResultViewModel {
-    let provider: CarRentalProvider
-    let location: CarRentalLocation
-    let address: CarRentalAddress
-    let car: CarRentalCar
-}
-
-// Flatten results
-extension CarRentalResultViewModel {
-    static func results(from results: [CarRentalResult]) -> [CarRentalResultViewModel] {
-        return results.flatMap { result in
-            return result.cars.map { car in
-                return CarRentalResultViewModel(provider: result.provider,
-                                                location: result.location,
-                                                address: result.address,
-                                                car: car)
-            }
-        }
     }
 }
