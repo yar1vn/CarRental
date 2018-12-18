@@ -1,5 +1,5 @@
 //
-//  RentViewController.swift
+//  CarRentalViewController.swift
 //  CarRental
 //
 //  Created by Yariv Nissim on 12/13/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RentViewController: UIViewController {
-
+final class CarRentalViewController: UITableViewController {
+    
 }
 
