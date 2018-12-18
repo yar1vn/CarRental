@@ -34,9 +34,9 @@ final class CarRentalService {
     }
 
     // Keep an instance for performance and easy access.
-    private let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
+    private let dateFormatter: ISO8601DateFormatter = {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withFullDate, .withDashSeparatorInDate]
         return formatter
     }()
 
