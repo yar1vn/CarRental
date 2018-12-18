@@ -33,6 +33,7 @@ final class CarRentalService {
         self.apiKey = apiKey
     }
 
+    // Keep an instance for performance and easy access.
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
@@ -48,7 +49,7 @@ final class CarRentalService {
             URLQueryItem(name: "apikey", value: apiKey),
             URLQueryItem(name: "latitude", value: "\(location.latitude)"),
             URLQueryItem(name: "longitude", value: "\(location.longitude)"),
-            URLQueryItem(name: "radius", value: "42"),
+            URLQueryItem(name: "radius", value: "42"), // Use a default value for now.
             URLQueryItem(name: "pick_up", value: dateFormatter.string(from: dates.start)),
             URLQueryItem(name: "drop_off", value: dateFormatter.string(from: dates.end))
         ]
