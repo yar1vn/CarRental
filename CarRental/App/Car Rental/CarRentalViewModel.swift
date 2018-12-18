@@ -43,17 +43,6 @@ final class CarRentalViewModel: NSObject {
         }
     }
 
-    func sort<C: Comparable>(by comprison: (C, C) -> Bool,
-                             keyPath: KeyPath<CarRentalResultViewModel, C>) {
-        guard let rentals = state.getCarRentals() else {
-            return
-        }
-        let sorted = rentals.lazy.sorted {
-            comprison($0[keyPath: keyPath], $1[keyPath: keyPath])
-        }
-        state = .rentals(sorted)
-    }
-
     func loadRentals(for location: CLLocationCoordinate2D, dates: DateInterval) {
         state = .loading
 
@@ -65,6 +54,40 @@ final class CarRentalViewModel: NSObject {
             } catch {
                 self.state = .error(error)
             }
+        }
+    }
+}
+
+// Sorting
+extension CarRentalViewModel {
+    enum Sort: String, CaseIterable {
+        case company = "Company"
+        case distance = "Distance"
+        case price = "Price"
+    }
+
+    func sort(by sorting: Sort, ascending: Bool) {
+        switch sorting {
+        case .company:
+            sort(keyPath: \.provider.companyName, ascending: ascending)
+        case .distance:
+            sort(keyPath: \.distance, ascending: ascending)
+        case .price:
+            sort(keyPath: \.estimatedTotal, ascending: ascending)
+        }
+    }
+
+    private func sort<C: Comparable>(keyPath: KeyPath<CarRentalResultViewModel, C>, ascending: Bool) {
+        guard let rentals = state.getCarRentals() else {
+            return
+        }
+        let results = rentals.lazy.sorted {
+            $0[keyPath: keyPath] < $1[keyPath: keyPath]
+        }
+        if ascending {
+            state = .rentals(results)
+        } else {
+            state = .rentals(results.reversed())
         }
     }
 }
