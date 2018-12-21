@@ -23,11 +23,14 @@ enum CarRentalError: Error, CustomStringConvertible {
     }
 }
 
-final class CarRentalService {
+protocol CarRentalServiceProtocol {
+    typealias CompletionType = (Result<CarRentalResponse, CarRentalError>) -> Void
+    func getRentals(location: CLLocationCoordinate2D, dates: DateInterval, completion: @escaping CompletionType)
+}
+
+final class CarRentalService: CarRentalServiceProtocol {
     private let apiKey: String
     private let baseURL = "api.sandbox.amadeus.com"
-
-    typealias CompletionType = (Result<CarRentalResponse, CarRentalError>) -> Void
 
     init(apiKey: String) {
         self.apiKey = apiKey

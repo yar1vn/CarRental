@@ -19,7 +19,7 @@ class CarRentalResponseTests: XCTestCase {
     }
 }
 
-private let validResponseData = """
+let validResponseData = """
 {
   "results" : [ {
     "provider" : {

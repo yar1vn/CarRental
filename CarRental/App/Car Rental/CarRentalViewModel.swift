@@ -10,10 +10,10 @@ import UIKit
 import CoreLocation
 
 final class CarRentalViewModel: NSObject {
-    private let carRentalService: CarRentalService
+    private let carRentalService: CarRentalServiceProtocol
     private let cellIdentifier: String
 
-    init(carRentalService: CarRentalService, cellIdentifier: String) {
+    init(carRentalService: CarRentalServiceProtocol, cellIdentifier: String) {
         self.carRentalService = carRentalService
         self.cellIdentifier = cellIdentifier
     }
