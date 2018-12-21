@@ -69,11 +69,11 @@ extension CarRentalViewModel {
     func sort(by sorting: Sort, ascending: Bool) {
         switch sorting {
         case .company:
-            sort(keyPath: \.provider.companyName, ascending: ascending)
+            sort(keyPath: \.company, ascending: ascending)
         case .distance:
             sort(keyPath: \.distance, ascending: ascending)
         case .price:
-            sort(keyPath: \.estimatedTotal, ascending: ascending)
+            sort(keyPath: \.price, ascending: ascending)
         }
     }
 

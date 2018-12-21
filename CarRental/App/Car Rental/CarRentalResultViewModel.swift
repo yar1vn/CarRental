@@ -10,35 +10,79 @@ import Foundation
 import CoreLocation
 
 struct CarRentalResultViewModel {
-    let provider: CarRentalProvider
-    let location: CarRentalLocation
-    let address: CarRentalAddress
-    let car: CarRentalCar
-    let distance: CLLocationDistance
+    let company: String
+    let location: CLLocationCoordinate2D
+    let address: String
+    let airport: String?
+    let price: Double
+    let car: String
+    let distance: Measurement<UnitLength>
+    let imageURL: URL?
+    let vehicle: CarRentalVehicleInfo
 
-    var estimatedTotal: Double {
-        return Double(car.estimatedTotal?.amount ?? "0") ?? 0
+    private let priceFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        return formatter
+    }()
+
+    private let distanceFormatter: MeasurementFormatter = {
+        let formatter = MeasurementFormatter()
+        formatter.unitStyle = .long
+        return formatter
+    }()
+}
+
+extension CarRentalResultViewModel {
+    var formattedPrice: String {
+        return priceFormatter.string(from: NSNumber(value: price)) ?? ""
     }
 
+    var formattedDistance: String {
+        return distanceFormatter.string(from: distance)
+    }
+
+    var rentalSummary: String {
+        return "\(car) for \(formattedPrice)"
+    }
+
+    var companySummary: String {
+        return "\(company). \(formattedDistance) - \(airport ?? address)"
+    }
 }
 
 // Flatten results
 extension CarRentalResultViewModel {
-    static func distance(from coordinate: CLLocationCoordinate2D, to: CarRentalLocation) -> CLLocationDistance {
+    static func distance(from coordinate: CLLocationCoordinate2D, to: CarRentalLocation) -> Measurement<UnitLength> {
         let fromLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         let toLocation = CLLocation(latitude: to.latitude, longitude: to.longitude)
-        return toLocation.distance(from: fromLocation)
+        let distanceInMeters = toLocation.distance(from: fromLocation)
+        return Measurement(value: distanceInMeters, unit: UnitLength.meters)
     }
 
     static func results(from results: [CarRentalResult], location: CLLocationCoordinate2D) -> [CarRentalResultViewModel] {
+        func formatAddress(_ address: CarRentalAddress) -> String {
+            let region = address.region.map { ", \($0)" } ?? ""
+            let postalCode = address.postalCode.map { " \($0)" } ?? ""
+            return "\(address.line1), \(address.city)" + region + postalCode
+        }
+
         return results.flatMap { result in
             return result.cars.map { car in
-                let distance = self.distance(from: location, to: result.location)
-                return CarRentalResultViewModel(provider: result.provider,
-                                                location: result.location,
-                                                address: result.address,
-                                                car: car,
-                                                distance: distance)
+                let type = car.vehicleInfo.type.map { " \($0)" } ?? ""
+                let vehicle = "\(car.vehicleInfo.category)" + type
+
+                return CarRentalResultViewModel(
+                    company: result.provider.companyName,
+                    location: CLLocationCoordinate2D(latitude: result.location.latitude, longitude: result.location.longitude),
+                    address: formatAddress(result.address),
+                    airport: result.airport,
+                    price: car.estimatedTotal.flatMap { Double($0.amount) } ?? 0,
+                    car: vehicle,
+                    distance: distance(from: location, to: result.location),
+                    imageURL: car.image?.url,
+                    vehicle: car.vehicleInfo
+                )
             }
         }
     }
