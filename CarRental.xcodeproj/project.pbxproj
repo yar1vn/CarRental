@@ -22,6 +22,7 @@
 		09E7E3F221C8A21600DFD629 /* CarRentalResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E7E3F121C8A21600DFD629 /* CarRentalResponseTests.swift */; };
 		09E7E3F421C8B8C500DFD629 /* LocationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E7E3F321C8B8C500DFD629 /* LocationServiceTests.swift */; };
 		09E7E3F621C8D7D400DFD629 /* CarRentalResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E7E3F521C8D7D300DFD629 /* CarRentalResultViewModel.swift */; };
+		09F27F2021C967BD0031E4B6 /* CarRentalViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F27F1F21C967BD0031E4B6 /* CarRentalViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		09E7E3F121C8A21600DFD629 /* CarRentalResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalResponseTests.swift; sourceTree = "<group>"; };
 		09E7E3F321C8B8C500DFD629 /* LocationServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServiceTests.swift; sourceTree = "<group>"; };
 		09E7E3F521C8D7D300DFD629 /* CarRentalResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalResultViewModel.swift; sourceTree = "<group>"; };
+		09F27F1F21C967BD0031E4B6 /* CarRentalViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		09CE350C21C3706500B91CB2 /* CarRentalTests */ = {
 			isa = PBXGroup;
 			children = (
+				09F27F1F21C967BD0031E4B6 /* CarRentalViewModelTests.swift */,
 				09CE350D21C3706500B91CB2 /* CarRentalServiceTests.swift */,
 				09E7E3F121C8A21600DFD629 /* CarRentalResponseTests.swift */,
 				09E7E3F321C8B8C500DFD629 /* LocationServiceTests.swift */,
@@ -338,6 +341,7 @@
 				09CE350E21C3706500B91CB2 /* CarRentalServiceTests.swift in Sources */,
 				09E7E3F221C8A21600DFD629 /* CarRentalResponseTests.swift in Sources */,
 				09E7E3F421C8B8C500DFD629 /* LocationServiceTests.swift in Sources */,
+				09F27F2021C967BD0031E4B6 /* CarRentalViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +552,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yariv.CarRentalTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SUPPRESS_WARNINGS = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CarRental.app/CarRental";
@@ -568,6 +573,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yariv.CarRentalTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SUPPRESS_WARNINGS = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CarRental.app/CarRental";
