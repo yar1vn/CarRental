@@ -9,6 +9,10 @@
 import Foundation
 import CoreLocation
 
+protocol CarRentalResultViewModelContainer {
+    var carRentalResult: CarRentalResultViewModel! { get set }
+}
+
 struct CarRentalResultViewModel {
     let company: String
     let location: CLLocationCoordinate2D
@@ -79,7 +83,7 @@ extension CarRentalResultViewModel {
                     company: result.provider.companyName,
                     location: CLLocationCoordinate2D(latitude: result.location.latitude, longitude: result.location.longitude),
                     address: formatAddress(result.address),
-                    airport: result.airport,
+                    airport: result.airport.map { "Airport: \($0)" },
                     price: car.estimatedTotal.flatMap { Double($0.amount) } ?? 0,
                     car: vehicle,
                     distance: distance(from: location, to: result.location),
