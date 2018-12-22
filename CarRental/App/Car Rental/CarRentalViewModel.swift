@@ -22,7 +22,7 @@ final class CarRentalViewModel: NSObject {
     // this could be upgraded with Rx in the future.
     var stateChanged: ((State) -> Void)?
 
-    private var state: State = .empty {
+    private(set) var state: State = .empty {
         didSet {
             stateChanged?(state)
         }
@@ -41,6 +41,10 @@ final class CarRentalViewModel: NSObject {
             }
             return rentals
         }
+    }
+
+    func loadRentals(for searchData: RentalSearchData) {
+        loadRentals(for: searchData.location, dates: searchData.dates)
     }
 
     func loadRentals(for location: CLLocationCoordinate2D, dates: DateInterval) {
