@@ -11,29 +11,10 @@ import UIKit
 final class CarRentalViewController: UITableViewController {
     @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
 
-    // MARK:- View Model
     private let viewModel = CarRentalViewModel(
         carRentalService: CarRentalService(apiKey: "ClckdS45oGCo1izQRM7vGR2U2AC3vdhm"),
         cellIdentifier: "RentalCell"
     )
-
-    func handleState(state: CarRentalViewModel.State) {
-        DispatchQueue.main.async {
-            self.navigationItem.titleView = nil
-
-            switch state {
-            case .loading:
-                self.navigationItem.titleView = self.loadingIndicator
-            case .rentals(let rentals):
-                self.title = "\(rentals.count) Rentals Found"
-            fallthrough // reload the table after setting a title
-            case .empty:
-                self.tableView.reloadData()
-            case .error(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
 
     // MARK:- View Lifecycle
     override func viewDidLoad() {
@@ -50,17 +31,57 @@ final class CarRentalViewController: UITableViewController {
             performSegue(withIdentifier: "Search", sender: self)
         }
     }
+}
 
-    // MARK:- Unwind segues
-    @IBAction func performSearch(_ segue: UIStoryboardSegue) {
-        if let searchDataContainer = segue.source as? RentalSearchDataContainer & UIViewController {
-            viewModel.loadRentals(for: searchDataContainer.rentalSearchData)
+// MARK:- View Model Callbacks
+extension CarRentalViewController {
+    func handleState(state: CarRentalViewModel.State) {
+        DispatchQueue.main.async {
+            self.navigationItem.titleView = nil
+            self.tableView.reloadData()
+
+            switch state {
+            case .loading:
+                self.navigationItem.titleView = self.loadingIndicator
+            case .rentals(let rentals):
+                self.title = "\(rentals.count) Rentals Found"
+            case .empty: break
+            case .error(let error):
+                let alert = UIAlertController(title: "Error Occurred", message: "Could not load rental cars. Please try again.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+
+                print(error) // log the error to console
+            }
         }
     }
+}
 
+// MARK:- Segues
+extension CarRentalViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = tableView.indexPath(for: sender),
+            let rentalCar = viewModel[indexPath],
+            var container = segue.destination as? CarRentalResultViewModelContainer else {
+                return
+        }
+        container.carRentalResult = rentalCar
+    }
+
+    // Unwind segue
+    @IBAction func performSearch(_ segue: UIStoryboardSegue) {
+        guard let searchDataContainer = segue.source as? RentalSearchDataContainer else {
+            return
+        }
+        viewModel.loadRentals(for: searchDataContainer.rentalSearchData)
+    }
+
+    // Unwind segue
     @IBAction func cancel(_ segue: UIStoryboardSegue) {}
+}
 
-    // MARK:- Sorting
+// MARK:- Sorting
+extension CarRentalViewController {
     @IBAction func sortByCompany() { sort(by: .company) }
     @IBAction func sortByDistance() { sort(by: .distance) }
     @IBAction func sortByPrice() { sort(by: .price) }
