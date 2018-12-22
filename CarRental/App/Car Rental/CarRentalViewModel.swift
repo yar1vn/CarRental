@@ -115,6 +115,7 @@ extension CarRentalViewModel: UITableViewDataSource {
     }
 
     func configureCell(_ cell: UITableViewCell, with rental: CarRentalResultViewModel) {
-
+        cell.textLabel?.text = rental.rentalSummary
+        cell.detailTextLabel?.text = rental.companySummary
     }
 }

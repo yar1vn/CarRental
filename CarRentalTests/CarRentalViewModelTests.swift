@@ -12,9 +12,9 @@ import CoreLocation
 
 class CarRentalViewModelTests: XCTestCase {
     func testLoadRentals() {
+        let viewModel = CarRentalViewModel(carRentalService: MockCarRentalService(), cellIdentifier: "")
         let expectation = XCTestExpectation(description: "Load Rentals")
 
-        let viewModel = CarRentalViewModel(carRentalService: MockCarRentalService(), cellIdentifier: "")
         viewModel.stateChanged = { state in
             if case .rentals(let rentals) = state {
                 expectation.fulfill()

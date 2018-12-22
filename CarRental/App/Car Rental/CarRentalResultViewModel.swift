@@ -51,22 +51,25 @@ extension CarRentalResultViewModel {
     }
 }
 
-// Flatten results
 extension CarRentalResultViewModel {
-    static func distance(from coordinate: CLLocationCoordinate2D, to: CarRentalLocation) -> Measurement<UnitLength> {
+    /// Use CoreLocation to calculate the distance between a coordinate to the rental location
+    private static func distance(from coordinate: CLLocationCoordinate2D, to: CarRentalLocation) -> Measurement<UnitLength> {
         let fromLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         let toLocation = CLLocation(latitude: to.latitude, longitude: to.longitude)
         let distanceInMeters = toLocation.distance(from: fromLocation)
         return Measurement(value: distanceInMeters, unit: UnitLength.meters)
     }
 
+    /// Convert the results into a formatted struct
     static func results(from results: [CarRentalResult], location: CLLocationCoordinate2D) -> [CarRentalResultViewModel] {
+        // Helper method
         func formatAddress(_ address: CarRentalAddress) -> String {
             let region = address.region.map { ", \($0)" } ?? ""
             let postalCode = address.postalCode.map { " \($0)" } ?? ""
             return "\(address.line1), \(address.city)" + region + postalCode
         }
 
+        // Flatten results
         return results.flatMap { result in
             return result.cars.map { car in
                 let type = car.vehicleInfo.type.map { " \($0)" } ?? ""
