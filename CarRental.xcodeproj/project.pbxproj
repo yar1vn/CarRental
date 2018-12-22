@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		094C5C9021CCC3A3005FEB90 /* RentalSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094C5C8F21CCC3A3005FEB90 /* RentalSearchViewController.swift */; };
+		094C5C9321CCDD14005FEB90 /* RentalSearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094C5C9221CCDD14005FEB90 /* RentalSearchData.swift */; };
 		09CE34F921C3706300B91CB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE34F821C3706300B91CB2 /* AppDelegate.swift */; };
 		09CE34FB21C3706300B91CB2 /* CarRentalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE34FA21C3706300B91CB2 /* CarRentalViewController.swift */; };
 		09CE34FE21C3706300B91CB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09CE34FC21C3706300B91CB2 /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		094C5C8F21CCC3A3005FEB90 /* RentalSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalSearchViewController.swift; sourceTree = "<group>"; };
+		094C5C9221CCDD14005FEB90 /* RentalSearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalSearchData.swift; sourceTree = "<group>"; };
 		09CE34F521C3706300B91CB2 /* CarRental.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarRental.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09CE34F821C3706300B91CB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09CE34FA21C3706300B91CB2 /* CarRentalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +96,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		094C5C9121CCDCE6005FEB90 /* Search Screen */ = {
+			isa = PBXGroup;
+			children = (
+				094C5C8F21CCC3A3005FEB90 /* RentalSearchViewController.swift */,
+				094C5C9221CCDD14005FEB90 /* RentalSearchData.swift */,
+			);
+			path = "Search Screen";
+			sourceTree = "<group>";
+		};
 		09CE34EC21C3706200B91CB2 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +182,7 @@
 			children = (
 				09CE34FC21C3706300B91CB2 /* Main.storyboard */,
 				09CE353421C3760800B91CB2 /* Car Rental */,
+				094C5C9121CCDCE6005FEB90 /* Search Screen */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -328,6 +342,8 @@
 				09CE353621C3794700B91CB2 /* CarRentalService.swift in Sources */,
 				09CE34FB21C3706300B91CB2 /* CarRentalViewController.swift in Sources */,
 				09CE352F21C374B300B91CB2 /* LocationService.swift in Sources */,
+				094C5C9321CCDD14005FEB90 /* RentalSearchData.swift in Sources */,
+				094C5C9021CCC3A3005FEB90 /* RentalSearchViewController.swift in Sources */,
 				09CE353321C375C400B91CB2 /* CarRentalViewModel.swift in Sources */,
 				09CE353821C379FE00B91CB2 /* CarRental.swift in Sources */,
 				09CE34F921C3706300B91CB2 /* AppDelegate.swift in Sources */,
