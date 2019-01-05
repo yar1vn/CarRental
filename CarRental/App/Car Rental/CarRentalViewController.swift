@@ -12,7 +12,7 @@ final class CarRentalViewController: UITableViewController {
     @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
 
     private let viewModel = CarRentalViewModel(
-        carRentalService: CarRentalService(apiKey: "ClckdS45oGCo1izQRM7vGR2U2AC3vdhm"),
+        carRentalService: CarRentalService(apiKey: "06ROFqTZjGvA72oBJXgsGYabNK39maBz"),
         cellIdentifier: "RentalCell"
     )
 
