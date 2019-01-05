@@ -18,13 +18,11 @@
 		09CE350E21C3706500B91CB2 /* CarRentalServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE350D21C3706500B91CB2 /* CarRentalServiceTests.swift */; };
 		09CE351921C3706500B91CB2 /* CarRentalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE351821C3706500B91CB2 /* CarRentalUITests.swift */; };
 		09CE352821C3740500B91CB2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE352721C3740500B91CB2 /* Result.swift */; };
-		09CE352F21C374B300B91CB2 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE352E21C374B300B91CB2 /* LocationService.swift */; };
 		09CE353121C374D400B91CB2 /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE353021C374D400B91CB2 /* UITableView+.swift */; };
 		09CE353321C375C400B91CB2 /* CarRentalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE353221C375C400B91CB2 /* CarRentalViewModel.swift */; };
 		09CE353621C3794700B91CB2 /* CarRentalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE353521C3794700B91CB2 /* CarRentalService.swift */; };
 		09CE353821C379FE00B91CB2 /* CarRental.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE353721C379FE00B91CB2 /* CarRental.swift */; };
 		09E7E3F221C8A21600DFD629 /* CarRentalResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E7E3F121C8A21600DFD629 /* CarRentalResponseTests.swift */; };
-		09E7E3F421C8B8C500DFD629 /* LocationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E7E3F321C8B8C500DFD629 /* LocationServiceTests.swift */; };
 		09E7E3F621C8D7D400DFD629 /* CarRentalResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E7E3F521C8D7D300DFD629 /* CarRentalResultViewModel.swift */; };
 		09F27F2021C967BD0031E4B6 /* CarRentalViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F27F1F21C967BD0031E4B6 /* CarRentalViewModelTests.swift */; };
 /* End PBXBuildFile section */
@@ -64,13 +62,11 @@
 		09CE351821C3706500B91CB2 /* CarRentalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalUITests.swift; sourceTree = "<group>"; };
 		09CE351A21C3706500B91CB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09CE352721C3740500B91CB2 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		09CE352E21C374B300B91CB2 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		09CE353021C374D400B91CB2 /* UITableView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		09CE353221C375C400B91CB2 /* CarRentalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalViewModel.swift; sourceTree = "<group>"; };
 		09CE353521C3794700B91CB2 /* CarRentalService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarRentalService.swift; sourceTree = "<group>"; };
 		09CE353721C379FE00B91CB2 /* CarRental.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRental.swift; sourceTree = "<group>"; };
 		09E7E3F121C8A21600DFD629 /* CarRentalResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalResponseTests.swift; sourceTree = "<group>"; };
-		09E7E3F321C8B8C500DFD629 /* LocationServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServiceTests.swift; sourceTree = "<group>"; };
 		09E7E3F521C8D7D300DFD629 /* CarRentalResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalResultViewModel.swift; sourceTree = "<group>"; };
 		09F27F1F21C967BD0031E4B6 /* CarRentalViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,7 +149,6 @@
 				09F27F1F21C967BD0031E4B6 /* CarRentalViewModelTests.swift */,
 				09CE350D21C3706500B91CB2 /* CarRentalServiceTests.swift */,
 				09E7E3F121C8A21600DFD629 /* CarRentalResponseTests.swift */,
-				09E7E3F321C8B8C500DFD629 /* LocationServiceTests.swift */,
 				09CE350F21C3706500B91CB2 /* Info.plist */,
 			);
 			path = CarRentalTests;
@@ -205,7 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				09CE353521C3794700B91CB2 /* CarRentalService.swift */,
-				09CE352E21C374B300B91CB2 /* LocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -355,7 +349,6 @@
 				09CE352821C3740500B91CB2 /* Result.swift in Sources */,
 				09CE353621C3794700B91CB2 /* CarRentalService.swift in Sources */,
 				09CE34FB21C3706300B91CB2 /* CarRentalViewController.swift in Sources */,
-				09CE352F21C374B300B91CB2 /* LocationService.swift in Sources */,
 				094C5C9321CCDD14005FEB90 /* RentalSearchData.swift in Sources */,
 				094C5C9021CCC3A3005FEB90 /* RentalSearchViewController.swift in Sources */,
 				09CE353321C375C400B91CB2 /* CarRentalViewModel.swift in Sources */,
@@ -372,7 +365,6 @@
 			files = (
 				09CE350E21C3706500B91CB2 /* CarRentalServiceTests.swift in Sources */,
 				09E7E3F221C8A21600DFD629 /* CarRentalResponseTests.swift in Sources */,
-				09E7E3F421C8B8C500DFD629 /* LocationServiceTests.swift in Sources */,
 				09F27F2021C967BD0031E4B6 /* CarRentalViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,7 +533,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DFJ42DHHW7;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CarRental/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -559,7 +551,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DFJ42DHHW7;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CarRental/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -578,6 +570,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CarRentalTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -599,6 +592,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CarRentalTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
