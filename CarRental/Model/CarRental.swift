@@ -83,3 +83,8 @@ struct CarRentalProvider: Decodable, Hashable {
     let companyCode: String
     let companyName: String
 }
+
+struct CarRentalErrorResponse: Decodable, Hashable {
+    let status: Int
+    let message: String
+}

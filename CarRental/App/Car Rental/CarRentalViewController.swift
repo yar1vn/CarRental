@@ -20,6 +20,8 @@ final class CarRentalViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.stateChanged = self.handleState
+        handleState(state: viewModel.state)
+
         tableView.dataSource = viewModel
     }
 
@@ -45,10 +47,14 @@ extension CarRentalViewController {
                 self.navigationItem.titleView = self.loadingIndicator
             case .rentals(let rentals):
                 self.title = "\(rentals.count) Rentals Found"
-            case .empty: break
+                self.navigationController?.setToolbarHidden(false, animated: true)
+            case .empty:
+                self.navigationController?.setToolbarHidden(true, animated: true)
             case .error(let error):
-                let alert = UIAlertController(title: "Error Occurred", message: "Could not load rental cars. Please try again.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+                let alert = UIAlertController(title: "Error Occurred", message: error.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Close", style: .cancel) { _ in
+                    self.performSegue(withIdentifier: "Search", sender: self)
+                })
                 self.present(alert, animated: true, completion: nil)
 
                 print(error) // log the error to console

@@ -9,13 +9,15 @@
 import Foundation
 import CoreLocation
 
-enum CarRentalError: Error, CustomStringConvertible {
+enum CarRentalError: Error, LocalizedError {
+    case errorResponse(CarRentalErrorResponse)
     case invalidURL
     case badResponse(Error)
     case unknown(Error)
 
-    var description: String {
+    var errorDescription: String? {
         switch self {
+        case .errorResponse(let response): return response.message
         case .invalidURL: return "Could not parse CarRental URL."
         case .badResponse: return "Could not decode data from CarRental service."
         case .unknown: return "Unknown error occurred with CarRental service."
@@ -77,7 +79,14 @@ final class CarRentalService: CarRentalServiceProtocol {
                 let rentals = try CarRentalResponse(data: data)
                 completion(.success(rentals))
             } catch {
-                completion(.failure(.badResponse(error)))
+                // Try getting the error message from the API response
+                let errorResponse = try? JSONDecoder().decode(CarRentalErrorResponse.self, from: data)
+                
+                guard let response = errorResponse else {
+                    completion(.failure(.badResponse(error)))
+                    return
+                }
+                completion(.failure(.errorResponse(response)))
             }
         }.resume()
     }
